@@ -11,7 +11,7 @@ const TEST_ITERATIONS: usize = 1000;
 const TOLERANCE: f64 = 1e-3;
 
 fn test_robot(robot: Robot) {
-    let mut rng: Pcg64 = Seeder::from("robot").make_rng();
+    let mut rng: Pcg64 = Seeder::from("robot").into_rng();
     for _ in 0..TEST_ITERATIONS {
         let mut q = rng.gen::<[f64; 6]>();
         for i in 0..6 {
